@@ -16,8 +16,8 @@ import numpy as np
 import multiprocessing
 arcpy.env.overwriteOutput = True
 
-GADMGlobal = r'D:\Projects\SDG Indicators\SDG11\data\GADM\gadm_410-gdb\gadm_410.gdb\gadm'
-UCDB = r'D:\Projects\SDG Indicators\data\GHS\processing.gdb\GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_edited'
+GADMGlobal = r'C:\Users\Mike\SDSN Dropbox\Michael Andrews\SDGs Today\Projects\SDG Indicators by CIESIN\data\GADM\gadm_410-gdb\gadm_410.gdb\gadm'
+UCDB = r'C:\Users\Mike\SDSN Dropbox\Michael Andrews\SDGs Today\Projects\SDG Indicators by CIESIN\data\GHS\processing.gdb\GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_edited'
 
 #Start Time
 Start_Time = time.time()
@@ -26,8 +26,8 @@ def process(iso):
     message = None
     if message is None:
         try:
-            gdb = r'D:\Projects\SDG Indicators\SDG11\SDG11_7_1\output\%s.gdb' % iso
-            arcpy.CreateFileGDB_management(r'D:\Projects\SDG Indicators\SDG11\SDG11_7_1\output','%s.gdb' % iso)
+            gdb = r'E:\Projects\SDG Indicators by CIESIN\SDG11\SDG11_7_1\output\%s.gdb' % iso
+            arcpy.CreateFileGDB_management(r'E:\Projects\SDG Indicators by CIESIN\SDG11\SDG11_7_1\output','%s.gdb' % iso)
             arcpy.env.workspace = gdb
             #Select UCDB polygons
             where_clause = '"ISO_code" = \'%s\'' % iso
