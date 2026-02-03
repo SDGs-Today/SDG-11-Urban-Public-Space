@@ -1,7 +1,9 @@
 from pathlib import Path
 from worldpoppy import WorldPopDownloader, wp_manifest
 
-DATA_DIR = Path("UPDATED_WP")
+#Set your durectory - local, NOT DROPBOX
+DATA_DIR = Path(r"E:\Projects\Updated_WP")
+#DATA_DIR = Path("UPDATED_WP")
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 def pull_data(iso3_codes=None):
@@ -13,7 +15,7 @@ def pull_data(iso3_codes=None):
 
     downloader = WorldPopDownloader(directory=DATA_DIR)
 
-    YEAR = 2020
+    YEAR = 2025
 
     downloaded_files  = downloader.download(
         product_name=product_name,
@@ -30,6 +32,6 @@ def rename_data():
         path.rename(new_path)
 
 
-#pull_data(["JAM", "USA", "AUT", "TUV", "LUX"]) #<- For pulling sample data
-pull_data() #<- Leave Parameters empty for pulling all data
+pull_data(["JAM", "AUT", "TUV", "LUX"]) #<- For pulling sample data
+#pull_data() #<- Leave Parameters empty for pulling all data
 rename_data()
