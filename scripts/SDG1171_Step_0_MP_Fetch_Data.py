@@ -15,7 +15,7 @@ def pull_data(iso3_codes=None):
 
     downloader = WorldPopDownloader(directory=DATA_DIR)
 
-    YEAR = 2025
+    YEAR = 2020
 
     downloaded_files  = downloader.download(
         product_name=product_name,
